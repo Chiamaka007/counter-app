@@ -1,22 +1,22 @@
 import "./App.css";
-import {useState} from 'react';
+import { useSelector, useDispatch } from "react-redux";
+import { decrement, increment } from "./redux/counter";
 
 
 
 function App() {
-  const [counter, setCounter] = useState(0);
+  const count = useSelector((state) => state.counter.value);
+  const dispatch = useDispatch();
 
 
   return (
     <div className="App">
       <div className="wrapper">
-
-      <h1> {counter}</h1>
+        <h1> {count}</h1>
 
         <div className="btn">
-          <button onClick={() => setCounter(counter - 1)}>minus</button>
-          <button onClick={() => setCounter(0)}>reset</button>
-          <button onClick={() => setCounter(counter + 1)}>add</button>
+          <button onClick={() => dispatch(decrement())}>minus</button>
+          <button onClick={() => dispatch(increment())}>add</button>
         </div>
       </div>
     </div>

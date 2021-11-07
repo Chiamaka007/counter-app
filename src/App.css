@@ -38,6 +38,7 @@ button {
   color: #fff;
   border: 1px solid #999090;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  outline: none;
 }
 button:hover {
   color: black;
